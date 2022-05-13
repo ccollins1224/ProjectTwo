@@ -7,6 +7,10 @@ Instructions for how to write this code are based on a video from NeuralNine.
 https://www.youtube.com/watch?v=cRWg2SWuXtM
 """
 
+"""
+Changes from original are a title screen, colors, and time increment.
+"""
+
 #sets constants for the game colors
 color_background = (10,10,10)
 color_grid = (40,40,40)
@@ -98,6 +102,7 @@ def main():
                     running = not running
                     update(screen, cells, 10)
                     pygame.display.update()
+            #selecting the correct cell when the mouse is pressed
             if pygame.mouse.get_pressed()[0]:
                 pos = pygame.mouse.get_pos()
                 cells[pos[1] // 10, pos[0] //10] = 1
@@ -110,7 +115,7 @@ def main():
             cells = update(screen, cells, 10, with_progress=True)
             pygame.display.update()
 
-        time.sleep(0.001)
+        time.sleep(0.01)
 
 if __name__ == '__main__':
     main()
